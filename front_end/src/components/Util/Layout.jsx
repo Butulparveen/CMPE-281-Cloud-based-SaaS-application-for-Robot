@@ -14,7 +14,7 @@ export const Sidebar = ({ children }) => {
                         <section className="sm:flex-row flex flex-col flex-1">
                             <div
                                 className="content-box"
-                                style={{ flexGrow: 2, flexBasis: "0%" }}
+                                style={{ flexGrow: 2,flexBasis: "0%",width: "17%", backgroundColor: "#fff5f5;"}}
                             >
                                 {children}
                             </div>

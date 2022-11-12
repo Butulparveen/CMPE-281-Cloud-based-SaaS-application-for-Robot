@@ -101,7 +101,7 @@ class AdminBilling extends Component {
                     <br />
                     {graph}
                     <br />
-                    <div style={{ marginLeft: "30px", marginRight: "30px", backgroundColor: "#D6EAF8" }}>
+                    <div style={{ marginLeft: "30px", marginRight: "30px", backgroundColor: "rgb(255, 193, 7)"}}>
                         <table class="table">
                             <thead>
                                 <tr>

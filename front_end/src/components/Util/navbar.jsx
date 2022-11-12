@@ -8,7 +8,7 @@ export const Navbar = () => {
     const history = useHistory();
     const location = useLocation();
     return (
-        <div style={{ width: "25%", backgroundColor:'rgb(218, 166, 38)' }}>
+        <div style={{ width: "17%", backgroundColor:'rgb(218, 166, 38)' }}>
             <Navigation
                 activeItemId={location.pathname}
                 onSelect={({ itemId }) => {

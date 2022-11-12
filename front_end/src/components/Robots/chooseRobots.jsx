@@ -101,7 +101,7 @@ class ChooseRobots extends Component {
         return (
             <div>
                 <UserSidebar>
-                    <div style={{ float: "right" }}><button
+                    <div style={{ float: "right"}}><button
                         class="btn btn-success"
                         onClick={this.createRobot}
                         type="submit"
@@ -109,7 +109,7 @@ class ChooseRobots extends Component {
                         Create Robot
               </button>{' '}</div>
                     <br />
-                    <h2 style={{ marginLeft: "10%", fontSize: "20px" }}> Existing Robots</h2>
+                    <h2 style={{ marginLeft: "10%", fontSize: "26px" ,fontWeight: 'bold'}}> Existing Robots</h2>
                     <br />
                     <br />
                     <div className="row" style={{ marginLeft: "5%", }}>

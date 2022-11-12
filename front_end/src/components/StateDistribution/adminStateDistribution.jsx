@@ -144,7 +144,7 @@ class AdminStateDistribution extends Component {
                     <h2 style={{ marginLeft: "30px", fontSize: "20px", marginTop: "30px" }}>State Distribution</h2>
                     <br />
                     <br />
-                    <div style={{ marginLeft: "50px", marginRight: "50px", backgroundColor: "#D6EAF8" }}>
+                    <div style={{ marginLeft: "50px", marginRight: "50px", backgroundColor: "rgb(255, 193, 7)"}}>
                         <table class="table">
                             <tbody>
                                 <tr>
