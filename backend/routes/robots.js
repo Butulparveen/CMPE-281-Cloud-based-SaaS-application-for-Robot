@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const robots = require("../models/robots.js").default;
+const robots = require("../models/robots.js");
 const pool = require("../utils/mysqlConnection");
 var ObjectId = require("mongodb").ObjectID;
 
