@@ -160,7 +160,7 @@ class AdminStateDistribution extends Component {
                                     <th scope="col">{this.state.connectedRobots}</th>
                                 </tr>
                                 <tr>
-                                    <th scope="col">No of Stooped robots</th>
+                                    <th scope="col">No of Disconnected robots</th>
                                     <th scope="col">{this.state.stoppedRobots}</th>
                                 </tr>
                             </tbody>
