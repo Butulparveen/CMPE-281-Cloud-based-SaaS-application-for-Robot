@@ -15,6 +15,7 @@ class TempDistri extends Component {
             inActiveRobots: 0,
             connectedRobots: 0,
             stoppedRobots: 0,
+            operatedRobots:0,
             chartData: [],
         };
     }
@@ -36,6 +37,8 @@ class TempDistri extends Component {
                         }
                         else if (robo.roboState == "connected") {
                             this.setState({ connectedRobots: this.state.connectedRobots + 1 })
+                        }else if (robo.roboState == "operated") {
+                            this.setState({ operatedRobots: this.state.operatedRobots + 1 })
                         } else {
                             this.setState({ stoppedRobots: this.state.stoppedRobots + 1 })
                         }
@@ -53,6 +56,10 @@ class TempDistri extends Component {
 
                         labels.push("Connected Robots");
                         data.push(this.state.connectedRobots);
+                        backgroundColor.push("rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")");
+
+                        labels.push("Operated Robots");
+                        data.push(this.state.operatedRobots);
                         backgroundColor.push("rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")");
 
                         labels.push("Stopped Robots");
@@ -125,7 +132,11 @@ class TempDistri extends Component {
                                 <th scope="col">{this.state.connectedRobots}</th>
                             </tr>
                             <tr>
-                                <th scope="col">No of Disconnected robots</th>
+                                <th scope="col">No of Operated robots</th>
+                                <th scope="col">{this.state.operatedRobots}</th>
+                            </tr>
+                            <tr>
+                                <th scope="col">No of Stopped robots</th>
                                 <th scope="col">{this.state.stoppedRobots}</th>
                             </tr>
                         </tbody>
