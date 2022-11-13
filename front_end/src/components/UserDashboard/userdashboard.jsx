@@ -19,6 +19,7 @@ const UserDashboard = () => {
   return (
     <UserSidebar>
       <div>
+      <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Welcome to Robot Dashboard</h2>
         <br />
         <TempDistriUser />
       </div>

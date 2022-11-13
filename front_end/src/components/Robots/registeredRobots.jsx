@@ -61,7 +61,7 @@ class RegisterdRobots extends Component {
             <div>
                 <Sidebar>
                     <br />
-                    <h2 style={{ marginLeft: "10%", fontSize: "26px",fontWeight: 'bold'}}>Your Registered Robots</h2>
+                    <h2 style={{ marginLeft: "10%", fontSize: "26px",fontWeight: 'bold'}}>Your Registered Robots For Robot Cloud Food Delivery</h2>
                     <div className="row">
                         {robots}
                     </div>

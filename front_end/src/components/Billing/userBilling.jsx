@@ -100,6 +100,7 @@ class UserBilling extends Component {
     return (
       <div>
         <UserSidebar>
+        <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Billing Details</h2>
           <br />
           <br />
           {graph}

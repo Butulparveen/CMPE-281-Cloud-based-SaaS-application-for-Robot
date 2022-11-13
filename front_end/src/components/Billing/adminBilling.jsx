@@ -98,6 +98,7 @@ class AdminBilling extends Component {
         return (
             <div>
                 <Sidebar>
+                <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Admin Billing Details</h2>
                     <br />
                     {graph}
                     <br />

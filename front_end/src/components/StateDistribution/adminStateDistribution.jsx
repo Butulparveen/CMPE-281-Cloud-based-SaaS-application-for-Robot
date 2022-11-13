@@ -141,7 +141,7 @@ class AdminStateDistribution extends Component {
             <div>
                 <Sidebar>
 
-                    <h2 style={{ marginLeft: "30px", fontSize: "20px", marginTop: "30px" }}>State Distribution</h2>
+                    <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>State Distribution</h2>
                     <br />
                     <br />
                     <div style={{ marginLeft: "50px", marginRight: "50px", backgroundColor: "rgb(255, 193, 7)"}}>
