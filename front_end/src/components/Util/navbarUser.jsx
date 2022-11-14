@@ -35,6 +35,11 @@ export const NavbarUser = () => {
               },
 
             ],
+          }, 
+          {
+            title: "Robot Scheduling",
+            itemId: "/robotScheduling",
+            elemBefore: () => <Icon name="activity" />,
           },
           {
             title: "Billing",
