@@ -9,6 +9,8 @@ import img2 from "./images/img-2.jpeg";
 // import DateTimePicker from "react-datetime-picker";
 // import { Sidebar } from "../Util";
 import { Sidebar } from "../Util/Layout";
+import { history } from '../Util/history';
+import { Link } from 'react-router-dom';
 
 // import { toast, ToastContainer } from 'react-toastify';
 // import 'react-toastify/dist/ReactToastify.css';
@@ -65,8 +67,49 @@ class robotScheduling extends Component {
   
       render() {
         return (
+            <Sidebar>
+            <div style={{ width: "50%", marginTop: "2%", marginLeft: "20%", marginRight: "20%" }}>
+                    <h3 style={{ marginLeft: "40%", fontSize: "26px", fontWeight:"bold"}}>Schedule Robot</h3>
+                    <br />
+                    <form name="form"style={{fontSize: "18px", fontWeight:"bold" }}>
+                        <div className="form-group">
+                            <label>Robot Id</label>
+                            <input type="text" name="robotName"className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>Hotel</label>
+                            <input type="password" name="robotId"className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>Floor</label>
+                            <input type="password" name="robotId"className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>Table</label>
+                            <input type="password" name="robotId"className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>Start time</label>
+                            <input type="password" name="robotId"className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>End time</label>
+                            <input type="password" name="robotId"className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <button className="btn btn-primary"style={{fontSize: "18px", fontWeight:"bold" }}>
+                                Confirm
+                </button>
+                            <Link to="/userDashboard" className="btn btn-link"style={{fontSize: "18px", fontWeight:"bold" }}>Dashboard</Link>
+                        </div>
+                    </form>
+                </div>
+
+
+
+
             <div>
-                <Sidebar>
+              
                 <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Scheduling of Robot for Food Delivery</h2>
                     <br />
                     <br />
@@ -103,8 +146,9 @@ class robotScheduling extends Component {
 
                         </table>
                     </div>
-                </Sidebar>
+                
             </div>
+            </Sidebar>
            
         );
       }
