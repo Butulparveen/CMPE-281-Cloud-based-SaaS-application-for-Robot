@@ -44,7 +44,7 @@ export const Navbar = () => {
                     },
                     {
                         title: "Robot Scheduling",
-                        itemId: "/robotScheduling",
+                        itemId: "/schedule",
                         elemBefore: () => <Icon name="activity" />,
                      },
                     {

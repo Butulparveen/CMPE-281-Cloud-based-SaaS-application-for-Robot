@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "react-datetime-picker": "^4.1.1"
+  }
+}

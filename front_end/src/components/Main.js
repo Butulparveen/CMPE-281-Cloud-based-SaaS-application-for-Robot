@@ -24,6 +24,7 @@ import AdminBilling from "./Billing/adminBilling";
 import TempDistri from "./StateDistribution/tempDistri";
 import TempDistriUser from "./StateDistribution/tempDistriUser";
 import PlotAdminRobotPath from "./Robots/plotAdminRobotPath"
+import RobotSchedule from "./RobotSchedule/RobotSchedule";
 
 class Main extends Component {
     render() {
@@ -53,7 +54,7 @@ class Main extends Component {
                 <Route path="/adminBilling" component={AdminBilling} />
                 <Route path="/navigation" render={() => { window.open("./robot_controller.html"); }} />
                 <Route path = "/plotAdminRobotPath" component = {PlotAdminRobotPath}/>
-
+                <Route path="/schedule" component={RobotSchedule} exact />
             </div>
         );
     }
