@@ -65,7 +65,7 @@ class robotScheduling extends Component {
                                     <th scope="col">ROBOT</th>
                                     <th scope="col">HOTEL</th>
                                     <th scope="col">FLOOR</th>
-                                    <th scope="col">ROOM</th>
+                                    <th scope="col">TABLE</th>
                                     <th scope="col">START TIME</th>
                                     <th scope="col">END TIME</th>
                                     <th scope="col">STATUS</th>
