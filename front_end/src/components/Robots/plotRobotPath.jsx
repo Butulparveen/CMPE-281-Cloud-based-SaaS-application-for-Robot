@@ -17,7 +17,7 @@ class PlotRobotPath extends Component {
     renderTableData() {
         return this.state.data.map((student, index) => {
             return (
-                <tr key={student.x} style={{ borderColor: "black", borderWidth: "1px", padding: "20px" }}>
+                <tr key={student.id} style={{ borderColor: "black", borderWidth: "1px", padding: "20px" }}>
                     <td style={{ borderColor: "black", borderWidth: "1px", padding: "20px" }}>{student.x}</td>
                     <td style={{ borderColor: "black", borderWidth: "1px", padding: "20px" }}>{student.y}</td>
                 </tr>
@@ -46,7 +46,8 @@ class PlotRobotPath extends Component {
                         console.log("path::: ", path)
                         const obj = {
                             x: path.x,
-                            y: path.y
+                            y: path.y,
+                            id: path.oid
                         }
                         data.push(obj)
                     }

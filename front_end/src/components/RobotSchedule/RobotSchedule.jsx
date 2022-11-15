@@ -63,7 +63,7 @@ class robotScheduling extends Component {
                 <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Scheduling of Robot for Food Delivery</h2>
                     <br />
                     <br />
-                    <div style={{ marginLeft: "30px", marginRight: "30px", backgroundColor: "rgb(255, 193, 7)"}}>
+                    <div style={{ marginLeft: "30px", marginRight: "30px", backgroundColor: "#fbd38d"}}>
                         <table class="table">
                             <thead>
                                 <tr>
