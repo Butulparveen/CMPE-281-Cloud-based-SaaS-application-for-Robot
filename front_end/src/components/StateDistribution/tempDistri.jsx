@@ -29,15 +29,15 @@ class TempDistri extends Component {
             .then(async response => {
                 if (response.data) {
                     response.data.map(async (robo) => {
-                        if (robo.roboState == "Active") {
+                        if (robo.roboState.toLowerCase() == "active") {
                             this.setState({ activeRobots: this.state.activeRobots + 1 })
                         }
-                        else if (robo.roboState == "InActive") {
+                        else if (robo.roboState.toLowerCase() == "inactive") {
                             this.setState({ inActiveRobots: this.state.inActiveRobots + 1 })
                         }
-                        else if (robo.roboState == "connected") {
+                        else if (robo.roboState.toLowerCase() == "connected") {
                             this.setState({ connectedRobots: this.state.connectedRobots + 1 })
-                        }else if (robo.roboState == "operated") {
+                        }else if (robo.roboState.toLowerCase() == "operated") {
                             this.setState({ operatedRobots: this.state.operatedRobots + 1 })
                         } else {
                             this.setState({ stoppedRobots: this.state.stoppedRobots + 1 })
