@@ -21,29 +21,54 @@ class robotScheduling extends Component {
         const maxDate = new Date();
         maxDate.setDate(maxDate.getDate() + 13);
         this.state = {
-          robotList: [
-            { id: 1, name: "Robot 1" },
-            { id: 2, name: "Robot 2" },
-            { id: 3, name: "Robot 3" },
-          ],
-          masterData:[],
-          buildingList: [],
-          floorList: [],
-          roomList: [],
-          selectedBuilding: "",
-          selectedFloor: "",
-          selectedRoom: "",
-          startDate: "",
-          selectedRobot: "",
-          endDate: "",
+          robotId: '',
+          hotelId: '',
+          floorId: '',
+          tableId: '',
+          startDateTime: '',
+          endDateTime: '',
           scheduleList: [],
           maxDate : maxDate,
           minDate : new Date(),
           imageUrl : ""
         };
 
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+
       }
-    
+
+      handleChange = (e, name) => {
+        this.setState({
+            [name]: e.target.value
+        });
+    };
+
+      handleSubmit(e) {
+        e.preventDefault();
+        if (this.state.robotId) {
+            const schedule = {
+                robotId: this.state.robotId,
+                hotelId: this.state.hotelId,
+                floorId: this.state.floorId,
+                tableId: this.state.tableId,
+                startDateTime: new Date(),
+                endDateTime: new Date()
+            };
+            axios
+                .post(backend + "/api/users/createSchedule", schedule, {
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                })
+                .then(response => {
+                    history.push('/schedule');
+                    alert(`Robot Scheduled Successfully`)
+                });
+        }
+    }
+
+
       componentDidMount() {
         axios
             .get(backend + "/api/users/schedule", {
@@ -64,33 +89,42 @@ class robotScheduling extends Component {
             <div style={{ width: "50%", marginTop: "2%", marginLeft: "20%", marginRight: "20%" }}>
                     <h3 style={{ marginLeft: "40%", fontSize: "26px", fontWeight:"bold"}}>Schedule Robot</h3>
                     <br />
-                    <form name="form"style={{fontSize: "18px", fontWeight:"bold" }}>
+                    <form name="form" onSubmit={e => this.handleSubmit(e)}>
+                    {/* <form name="form"style={{fontSize: "18px", fontWeight:"bold" }}> */}
                         <div className="form-group">
                             <label>Robot Id</label>
-                            <input type="text" name="robotName"className={'form-control'} />
+                            <input type="text" name="robotId" onChange={e => this.handleChange(e, "robotId")} className={'form-control'} />
                         </div>
                         <div className="form-group">
                             <label>Hotel</label>
-                            <input type="password" name="robotId"className={'form-control'} />
+                            <input type="text" name="hotelId" onChange={e => this.handleChange(e, "hotelId")} className={'form-control'} />
                         </div>
                         <div className="form-group">
                             <label>Floor</label>
-                            <input type="password" name="robotId"className={'form-control'} />
+                            <input type="text" name="floorId" onChange={e => this.handleChange(e, "floorId")} className={'form-control'} />
                         </div>
                         <div className="form-group">
                             <label>Table</label>
-                            <input type="password" name="robotId"className={'form-control'} />
+                            <input type="text" name="tableId" onChange={e => this.handleChange(e, "tableId")} className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>Start date</label>
+                            <input type="text" name="startDate" onChange={e => this.handleChange(e, "startDate")} className={'form-control'} />
                         </div>
                         <div className="form-group">
                             <label>Start time</label>
-                            <input type="password" name="robotId"className={'form-control'} />
+                            <input type="text" name="startTime" onChange={e => this.handleChange(e, "startTime")} className={'form-control'} />
+                        </div>
+                        <div className="form-group">
+                            <label>End date</label>
+                            <input type="text" name="endDate"onChange={e => this.handleChange(e, "endDate")} className={'form-control'} />
                         </div>
                         <div className="form-group">
                             <label>End time</label>
-                            <input type="password" name="robotId"className={'form-control'} />
+                            <input type="text" name="endTime"onChange={e => this.handleChange(e, "endTime")} className={'form-control'} />
                         </div>
                         <div className="form-group">
-                            <button className="btn btn-primary"style={{fontSize: "18px", fontWeight:"bold" }}>
+                        <button className="btn btn-primary">
                                 Confirm
                 </button>
                             <Link to="/userDashboard" className="btn btn-link"style={{fontSize: "18px", fontWeight:"bold" }}>Dashboard</Link>
@@ -130,7 +164,7 @@ class robotScheduling extends Component {
                              <td>{data.table_id}</td>
                              <td>{data.start_date_time}</td>
                              <td>{data.end_date_time}</td>
-                             <td>{data.status}</td>
+                             <td>{data.status.toLowerCase()}</td>
                              <td style={{color:'green'}}>{data.statusName}</td>
                          </tr>
                      )

@@ -43,6 +43,28 @@ router.get("/schedule", async (req, res) => {
 });
 
 
+
+router.post("/createSchedule", async (req, res) => {
+  let schedule = req.body;
+  console.log("backend create schedule", schedule);
+  try {
+      return await pool.query(
+          `INSERT INTO robot_schedule (robot_id, hotel_id, floor_id, table_id, start_date_time, end_date_time) VALUES ('${schedule.robotId}', '${schedule.hotelId}', '${schedule.floorId}', '${schedule.tableId}', '${schedule.startDateTime}', '${schedule.endDateTime}');`,
+          async (err, sqlResult) => {
+              console.log("sql", sqlResult)
+              if (sqlResult && sqlResult.affectedRows > 0) {
+                  res.status(STATUS_CODE.SUCCESS).send({ status: STATUS_CODE.SUCCESS, payload: sqlResult });
+              } else {
+                  res.status(STATUS_CODE.INTERNAL_SERVER_ERROR).send({ status: STATUS_CODE.INTERNAL_SERVER_ERROR, payload: "error" });
+              }
+          }
+      );
+  } catch (error) {
+      res.status(STATUS_CODE.INTERNAL_SERVER_ERROR).send({ status: STATUS_CODE.INTERNAL_SERVER_ERROR, payload: error });
+  }
+});
+
+
 router.post("/updateServiceOperations", async(req,res)=>{
   try {
     let userId = req.body.userId;
