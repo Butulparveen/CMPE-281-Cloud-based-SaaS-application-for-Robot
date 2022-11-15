@@ -39,14 +39,7 @@ class robotScheduling extends Component {
           minDate : new Date(),
           imageUrl : ""
         };
-   
-        // this.changeRobot = this.changeRobot.bind(this);
-        // this.changeBuilding = this.changeBuilding.bind(this);
-        // this.changeFloor = this.changeFloor.bind(this);
-        // this.changeRoom = this.changeRoom.bind(this);
-        // this.changeStartDate = this.changeStartDate.bind(this);
-        // this.changeEndDate = this.changeEndDate.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
+
       }
     
       componentDidMount() {
