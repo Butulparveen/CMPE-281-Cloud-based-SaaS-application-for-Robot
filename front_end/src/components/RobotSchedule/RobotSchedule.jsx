@@ -6,7 +6,7 @@ import { UserSidebar } from "../Util/UserLayout";
 import { Bar, Line, Pie } from "react-chartjs-2";
 import img1 from "./images/img-1.jpeg";
 import img2 from "./images/img-2.jpeg";
-import DateTimePicker from "react-datetime-picker";
+// import DateTimePicker from "react-datetime-picker";
 // import { Sidebar } from "../Util";
 import { Sidebar } from "../Util/Layout";
 
@@ -49,8 +49,20 @@ class robotScheduling extends Component {
         // this.handleSubmit = this.handleSubmit.bind(this);
       }
     
+      componentDidMount() {
+        axios
+            .get(backend + "/api/users/schedule", {
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            })
+            .then(response => {
+                if (response.data) {
+                    this.setState({ scheduleList: response.data.payload })
+                }
+            });
+    }
   
-    
       render() {
         return (
             <div>
@@ -72,13 +84,23 @@ class robotScheduling extends Component {
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </tbody>
+                 
+                 {Array.isArray(this.state.scheduleList) && this.state.scheduleList.map((data, i) => {
+                     return (
+                         <tr key={i}>
+                             <td>{data.robot_id}</td>
+                             <td>{data.hotel_id}</td>
+                             <td>{data.floor_id}</td>
+                             <td>{data.table_id}</td>
+                             <td>{data.start_date_time}</td>
+                             <td>{data.end_date_time}</td>
+                             <td>{data.status}</td>
+                             <td style={{color:'green'}}>{data.statusName}</td>
+                         </tr>
+                     )
+                 })}
+             </tbody>
+
                         </table>
                     </div>
                 </Sidebar>

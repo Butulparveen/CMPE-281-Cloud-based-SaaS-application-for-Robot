@@ -29,6 +29,19 @@ router.get("/allRegUsers", async (req, res) => {
   }
 });
 
+router.get("/schedule", async (req, res) => {
+  try {
+    return await pool.query(
+      "select * from robot_schedule",
+      async function (error, result) {
+        console.log("schedule list", result)
+        res.status(STATUS_CODE.SUCCESS).send({ status: STATUS_CODE.SUCCESS, payload: result });
+      });
+  } catch (error) {
+    res.status(STATUS_CODE.INTERNAL_SERVER_ERROR).send({ status: STATUS_CODE.INTERNAL_SERVER_ERROR, payload: error });
+  }
+});
+
 
 router.post("/updateServiceOperations", async(req,res)=>{
   try {
