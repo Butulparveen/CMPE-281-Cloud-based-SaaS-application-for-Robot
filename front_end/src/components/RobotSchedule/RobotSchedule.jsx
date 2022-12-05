@@ -22,6 +22,7 @@ class robotScheduling extends Component {
         maxDate.setDate(maxDate.getDate() + 13);
         this.state = {
           robotId: '',
+          userId: '',
           hotelId: '',
           floorId: '',
           tableId: '',
@@ -49,6 +50,7 @@ class robotScheduling extends Component {
         if (this.state.robotId) {
             const schedule = {
                 robotId: this.state.robotId,
+                userId: localStorage.getItem("user_Id"),
                 hotelId: this.state.hotelId,
                 floorId: this.state.floorId,
                 tableId: this.state.tableId,
@@ -134,7 +136,7 @@ class robotScheduling extends Component {
 
 
 
-
+            {/* Table */}
             <div>
               
                 <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Scheduling of Robot for Food Delivery</h2>
@@ -144,6 +146,7 @@ class robotScheduling extends Component {
                         <table class="table">
                             <thead>
                                 <tr>
+                                    <th scope="col">USER</th>
                                     <th scope="col">ROBOT</th>
                                     <th scope="col">HOTEL</th>
                                     <th scope="col">FLOOR</th>
@@ -158,6 +161,7 @@ class robotScheduling extends Component {
                  {Array.isArray(this.state.scheduleList) && this.state.scheduleList.map((data, i) => {
                      return (
                          <tr key={i}>
+                             <td>{data.user_id}</td>
                              <td>{data.robot_id}</td>
                              <td>{data.hotel_id}</td>
                              <td>{data.floor_id}</td>

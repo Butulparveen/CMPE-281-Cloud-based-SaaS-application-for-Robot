@@ -49,7 +49,7 @@ router.post("/createSchedule", async (req, res) => {
   console.log("backend create schedule", schedule);
   try {
       return await pool.query(
-          `INSERT INTO robot_schedule (robot_id, hotel_id, floor_id, table_id, start_date_time, end_date_time) VALUES ('${schedule.robotId}', '${schedule.hotelId}', '${schedule.floorId}', '${schedule.tableId}', '${schedule.startDateTime}', '${schedule.endDateTime}');`,
+          `INSERT INTO robot_schedule (robot_id, user_id, hotel_id, floor_id, table_id, start_date_time, end_date_time) VALUES ('${schedule.robotId}', '${schedule.userId}', '${schedule.hotelId}', '${schedule.floorId}', '${schedule.tableId}', '${schedule.startDateTime}', '${schedule.endDateTime}');`,
           async (err, sqlResult) => {
               console.log("sql", sqlResult)
               if (sqlResult && sqlResult.affectedRows > 0) {
