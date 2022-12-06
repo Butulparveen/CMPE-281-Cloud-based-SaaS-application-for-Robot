@@ -8,6 +8,7 @@ import roboImage from "../Util/robo3.jpeg";
 import Button from '@material-ui/core/Button';
 import { history } from '../Util/history';
 
+
 class RegisterdRobots extends Component {
     constructor(props) {
         super(props);
@@ -51,7 +52,8 @@ class RegisterdRobots extends Component {
                             <h2>Run Time: {robot.runTime} </h2>
                             <Button size="medium" color="primary" onClick={e => this.chooseRobotPATH(e, robot._id)}>
                                     Path
-        </Button>
+                            </Button>
+                            <Button onClick={()=> history.push("/moveARobot")}>Play</Button>
                         </div>
                     </div>
                 );
