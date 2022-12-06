@@ -41,16 +41,16 @@ code {
 }
 
 .btn {
-  border: 2px solid #15A0E5;
+  border: 4px solid #1a202c;;
   background-color: rgb(255, 255, 255);
   color: black;
   padding: 12px 24px;
-  font-size: 18px;
+  font-size: 16px;
   font-style:;
   cursor: pointer;
   margin-right: 40px;
   margin-top: 20px;
-  width: 150px;
+  width: 154px;
 }
 
 .btn2 {

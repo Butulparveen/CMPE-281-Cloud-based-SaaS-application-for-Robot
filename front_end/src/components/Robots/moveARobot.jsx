@@ -149,61 +149,61 @@ class MoveARobot extends Component {
             <div class="row" style={{ fontSize: "20px" }}>
               <div class="col"style={{ fontSize: "26px" ,fontWeight: 'bold'}}>Move Robot </div>
             </div>
-            <div class="grid-container" style={{ marginLeft: "15%",fontSize: "26px" ,fontWeight: 'bold' }}>
+            <div class="grid-container" style={{ marginLeft: "15%",fontSize: "26px" ,fontWeight: 'bold',color:'black' }}>
               <div class="row">
                 <div class="col-2-3">
                   <button class="btn2 btn2-hide">Move</button>
                 </div>
                 <div class="col-2-3"style={{ fontSize: "20px" ,fontWeight: 'bold',back:'black'}}>
                   <button
-                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'#ed8936'}}
+                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'black'}}
                     onClick={(e) => this.moveup(e)}
                     type="submit"
                   >
-                    Up
+                    UP
                   </button>
                 </div>
               </div>
               <div class="row">
                 <div class="col-1-3">
                   <button
-                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'#ed8936'}}
+                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'black'}}
                     onClick={(e) => this.moveLeft(e)}
                     type="submit"
                   >
-                    Left
+                    LEFT
                   </button>
                 </div>
                 <div class="col-2-3">
                   <button
-                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'#ed8936'}}
+                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'black'}}
                     onClick={(e) => this.changeStatus(e)}
                     type="submit"
                   >
-                    Play/Pause
+                    PLAY/PAUSE
                   </button>
                 </div>
                 <div class="col-3-3">
                   <button
-                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'#ed8936'}}
+                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'black'}}
                     onClick={(e) => this.moveRight(e)}
                     type="submit"
                   >
-                    Right
+                    RIGHT
                   </button>
                 </div>
               </div>
               <div class="row">
                 <div class="col-1-3">
-                  <button class="btn2 btn2-hide"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'#ed8936'}}>Move</button>
+                  <button class="btn2 btn2-hide"style={{ fontSize: "20px" ,fontWeight: 'bold',color:'#black'}}>Move</button>
                 </div>
                 <div class="col-2-3">
                   <button
-                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold', color:'#ed8936'}}
+                    class="btn btn-success"style={{ fontSize: "20px" ,fontWeight: 'bold', color:'black'}}
                     onClick={(e) => this.moveDown(e)}
                     type="submit"
                   >
-                    Down
+                    DOWN
                   </button>
                 </div>
               </div>
