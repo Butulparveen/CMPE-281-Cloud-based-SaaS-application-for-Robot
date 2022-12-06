@@ -29,15 +29,15 @@ class TempDistri extends Component {
             .then(async response => {
                 if (response.data) {
                     response.data.map(async (robo) => {
-                        if (robo.roboState.toLowerCase() == "active") {
+                        if (robo.roboState.toLowerCase() === "active") {
                             this.setState({ activeRobots: this.state.activeRobots + 1 })
                         }
-                        else if (robo.roboState.toLowerCase() == "inactive") {
+                        else if (robo.roboState.toLowerCase() === "inactive") {
                             this.setState({ inActiveRobots: this.state.inActiveRobots + 1 })
                         }
-                        else if (robo.roboState.toLowerCase() == "connected") {
+                        else if (robo.roboState.toLowerCase() === "connected") {
                             this.setState({ connectedRobots: this.state.connectedRobots + 1 })
-                        }else if (robo.roboState.toLowerCase() == "operated") {
+                        }else if (robo.roboState.toLowerCase() === "operated") {
                             this.setState({ operatedRobots: this.state.operatedRobots + 1 })
                         } else {
                             this.setState({ stoppedRobots: this.state.stoppedRobots + 1 })
@@ -70,7 +70,7 @@ class TempDistri extends Component {
                         var datasets = [];
                         state.labels = labels;
                         var x = {};
-                        x.label = "State Distribution";
+                        x.label = "State Distribution hi";
                         x.data = data;
                         x.backgroundColor = backgroundColor;
                         datasets.push(x);
@@ -148,6 +148,39 @@ class TempDistri extends Component {
             </div >
         );
     }
+
+    // render() {
+	// 	const options = {
+	// 		animationEnabled: true,
+	// 		exportEnabled: true,
+	// 		theme: "dark2", // "light1", "dark1", "dark2"
+	// 		title:{
+	// 			text: "Trip Expenses"
+	// 		},
+	// 		data: [{
+	// 			type: "pie",
+	// 			indexLabel: "{label}: {y}%",		
+	// 			startAngle: -90,
+	// 			dataPoints: [
+	// 				{ y: 20, label: "Airfare" },
+	// 				{ y: 24, label: "Food & Drinks" },
+	// 				{ y: 20, label: "Accomodation" },
+	// 				{ y: 14, label: "Transportation" },
+	// 				{ y: 12, label: "Activities" },
+	// 				{ y: 10, label: "Misc" }	
+	// 			]
+	// 		}]
+	// 	}
+		
+	// 	return (
+	// 	<div>
+	// 		<CanvasJSChart options = {options} 
+	// 			/* onRef={ref => this.chart = ref} */
+	// 		/>
+	// 		{/*You can get reference to the chart instance as shown above using onRef. This allows you to access all chart properties and methods*/}
+	// 	</div>
+	// 	);
+	// }
 }
 
 export default TempDistri;
