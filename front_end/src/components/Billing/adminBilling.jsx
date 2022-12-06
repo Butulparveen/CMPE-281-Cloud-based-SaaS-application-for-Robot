@@ -77,7 +77,7 @@ class AdminBilling extends Component {
                     options={{
                         title: {
                             display: "State Distribution",
-                            text: "Billing Details",
+                            text: "Billing Details for all Users",
                             fontSize: 25,
                         },
                         scales: {
@@ -98,7 +98,7 @@ class AdminBilling extends Component {
         return (
             <div>
                 <Sidebar>
-                <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Admin Billing Details</h2>
+                <h2 style={{ marginLeft: "30px", fontSize: "26px", marginTop: "30px",fontWeight:'bold' }}>Admin Billing Dashboard</h2>
                     <br />
                     {graph}
                     <br />

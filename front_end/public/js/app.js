@@ -14,7 +14,9 @@ var locationoo = {
   y: 0
 }
 
+// var backend = "http://54.219.150.111:3001";
 var backend = "http://localhost:3001";
+
 async function main() {
 
   // FIXME: 直接Credentialを指定する場合に有効にする ->

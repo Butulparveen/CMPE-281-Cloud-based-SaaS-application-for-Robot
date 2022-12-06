@@ -21,7 +21,7 @@ class MoveARobot extends Component {
         backend + "/api/robots/getRobot",
         {
           params: {
-            robotId: this.props.location.state,
+            robotId: this.props.location?.state?.roboId,
           },
         },
         {
@@ -47,7 +47,7 @@ class MoveARobot extends Component {
     const data = {
       roboState:
         this.state.robot.roboState === "Active" ? "InActive" : "Active",
-      id: this.props.location.state,
+      id: this.props.location.state.roboId,
       timeStamp: new Date(),
     };
     axios
@@ -62,7 +62,7 @@ class MoveARobot extends Component {
     const data = {
       x: this.state.x,
       y: this.state.y + 1,
-      id: this.props.location.state,
+      id: this.props.location.state.roboId,
     };
     axios
       .post(backend + "/api/robots/changeRobotPath", data)
@@ -76,7 +76,7 @@ class MoveARobot extends Component {
     let data = {
       x: this.state.x,
       y: this.state.y - 1,
-      id: this.props.location.state,
+      id: this.props.location.state.roboId,
     };
     axios
       .post(backend + "/api/robots/changeRobotPath", data)
@@ -90,7 +90,7 @@ class MoveARobot extends Component {
     let data = {
       x: this.state.x - 1,
       y: this.state.y,
-      id: this.props.location.state,
+      id: this.props.location.state.roboId,
     };
     axios
       .post(backend + "/api/robots/changeRobotPath", data)
@@ -104,7 +104,7 @@ class MoveARobot extends Component {
     let data = {
       x: this.state.x + 1,
       y: this.state.y,
-      id: this.props.location.state,
+      id: this.props.location.state.roboId,
     };
     axios
       .post(backend + "/api/robots/changeRobotPath", data)

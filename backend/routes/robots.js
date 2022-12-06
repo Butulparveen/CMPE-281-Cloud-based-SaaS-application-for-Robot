@@ -202,13 +202,16 @@ router.post("/changeRobotPath", async (req, response) => {
     x: req.body.x,
     y: req.body.y,
   };
+  console.log(data);
   return robots
-    .updateOne({ _id: req.body.id, userId: req.body.userId }, { $push: { roboPath: data } })
+    .updateOne({ _id: req.body.id}, { $push: { roboPath: data } })
     .exec()
     .then((robot) => {
+      console.log("inside changeRobotPath then: ", robot)
       response.status(200).json(robot);
     })
     .catch((err) => {
+      console.log("inside changeRobotPath catch: ", err)
       response.status(500).json({ error: err });
     });
 });

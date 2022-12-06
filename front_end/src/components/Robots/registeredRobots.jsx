@@ -53,7 +53,12 @@ class RegisterdRobots extends Component {
                             <Button size="medium" color="primary" onClick={e => this.chooseRobotPATH(e, robot._id)}>
                                     Path
                             </Button>
-                            <Button onClick={()=> history.push("/moveARobot")}>Play</Button>
+                            <Button onClick={()=> history.push({
+                                pathname: '/moveARobot',
+                                state: {
+                                    roboId: robot._id
+                                }
+                            })}>Play</Button>
                         </div>
                     </div>
                 );

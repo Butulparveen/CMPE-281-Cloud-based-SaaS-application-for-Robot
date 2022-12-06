@@ -70,7 +70,7 @@ class TempDistri extends Component {
                         var datasets = [];
                         state.labels = labels;
                         var x = {};
-                        x.label = "State Distribution hi";
+                        x.label = "State Distribution";
                         x.data = data;
                         x.backgroundColor = backgroundColor;
                         datasets.push(x);
