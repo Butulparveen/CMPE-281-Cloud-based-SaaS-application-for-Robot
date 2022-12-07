@@ -2,7 +2,8 @@
 
 const config = {
   secret: "Your passport secret key",
-  frontendURI: "http://localhost:3000",
+  // frontendURI: "http://localhost:3000",
+  frontendURI: "http://cmpe281bucket.s3-website-us-east-1.amazonaws.com/",
   mysqlUser: "admin",
   mysqlPassword: "admin123",
   mysqlHost: "aws-281.cghlq8hkkzcz.us-east-1.rds.amazonaws.com",
